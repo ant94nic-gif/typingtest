@@ -1,0 +1,36 @@
+<!-- templates/race.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заезд - {{ dict_name | capitalize }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-dark">
+    <div id="game-container" class="card p-4 shadow-lg w-100" style="max-width: 900px; background-color: #212529; color: white;">
+
+        <!-- Блок статистики -->
+        <div id="stats-panel" class="mb-4 d-flex justify-content-between align-items-center">
+            <div id="timer" class="stat-item fs-3 fw-bold">Таймер: <span id="time-left">0</span>s</div>
+            <div id="speed" class="stat-item fs-4">Скорость: <span>0</span> зн/мин</div>
+            <div id="accuracy" class="stat-item fs-4">Точность: <span>100</span>%</div>
+        </div>
+
+        <!-- Блок текста -->
+        <pre id="original-text" class="unselectable-text mb-4 p-3 border rounded" style="white-space: pre-wrap;">{{ original_text }}</pre>
+
+        <!-- Поле ввода -->
+        <textarea id="input-field" autofocus rows="6" class="form-control bg-transparent text-white border-white"></textarea>
+
+        <!-- Экран результата (скрыт вначале) -->
+        <div id="result-screen" class="mt-4 hidden">
+            <h2>Гонка завершена!</h2>
+            <p id="final-speed" class="fs-3"></p>
+            <p id="final-accuracy" class="fs-4"></p>
+            <button id="play-again-btn" class="btn btn-success mt-3">Новый заезд</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

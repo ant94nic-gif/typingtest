@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор словаря</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container py-5 text-center">
+        <h1 class="display-4 mb-4">Добро пожаловать!</h1>
+        <p class="lead mb-5">Выберите словарь для заезда:</p>
+
+        <form action="/race" method="get">
+            {% for dict_name in dictionaries %}
+                <button type="submit" name="dict" value="{{ dict_name }}"
+                        class="btn btn-primary btn-lg mx-2 my-2 custom-btn">
+                    {{ dict_name | capitalize }}
+                </button>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+</html>

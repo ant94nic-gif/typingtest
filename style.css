@@ -1,0 +1,38 @@
+/* static/css/style.css */
+body.bg-light { background-color: #f8f9fa; }
+.card { border-radius: 1rem; }
+#original-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+.unselectable-text {
+    -webkit-user-select: none; /* Safari */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+          user-select: none; /* Стандарт */
+      cursor: default;
+}
+#input-field {
+    background-color: transparent;
+    color: inherit;
+    border-bottom: 2px solid #0d6efd; /* Цвет границы */
+    outline: none;
+    resize: none;
+    caret-color: #0d6efd;
+}
+#input-field:focus {
+    border-color: #0a58ca; /* Темнее при фокусе */
+}
+.stat-item { opacity: 0.7; }
+.stat-item:hover { opacity: 1; }
+.hidden { display: none !important; }
+.show { animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+/* Подсветка символов */
+#original-text .typed-correct { color: #28a745; } /* Зеленый */
+#original-text .incorrect { color: #dc3545; text-decoration: line-through red; } /* Красный */
+.custom-btn { padding: 0.75rem 2rem; font-size: 1.1rem; }
